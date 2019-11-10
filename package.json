@@ -1,0 +1,119 @@
+{
+  "name": "xstate-xperiment",
+  "version": "0.0.0",
+  "description": "",
+  "author": "Karen <dev.kaskar2008@gmail.com>",
+  "repository": "https://github.com/sserpxEnazaK/xstate-xperiment.git",
+  "main": "build/production/index.html",
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.config/webpack.dev.server.ts",
+    "build:all": "npm-run-parallel build build:dev",
+    "build:dev": "webpack --config webpack.config/webpack.dev.ts",
+    "build": "webpack --config webpack.config/webpack.prod.ts",
+    "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
+    "test": "jest",
+    "test:report": "npm run test -- --verbose",
+    "test:watch": "npm run test:report -- --watch",
+    "test:prod": "npm run lint && npm run test:report -- --coverage --no-cache"
+  },
+  "devDependencies": {
+    "@mantha/webpack-config": "git+https://github.com/ke-mantha/mantha-webpack-config.git",
+    "@types/clean-webpack-plugin": "^0.1.2",
+    "@types/copy-webpack-plugin": "^4.4.2",
+    "@types/friendly-errors-webpack-plugin": "^0.1.1",
+    "@types/html-webpack-plugin": "^3.2.0",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^10.11.6",
+    "@types/optimize-css-assets-webpack-plugin": "^1.3.3",
+    "@types/uglifyjs-webpack-plugin": "^1.1.0",
+    "@types/webpack": "^4.4.16",
+    "@types/webpack-dev-server": "^2.9.6",
+    "@types/webpack-merge": "^4.1.3",
+    "autoprefixer": "^9.1.5",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-import-directory": "^1.0.3",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-preset-env": "^1.6.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.3",
+    "css-loader": "^1.0.0",
+    "extract-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "fork-ts-checker-webpack-plugin": "^0.4.10",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-template": "^6.2.0",
+    "husky": "^1.1.2",
+    "ignore-loader": "^0.1.2",
+    "image-webpack-loader": "^4.5.0",
+    "jest": "^24.5.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "npm-run-parallel": "^0.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "preload-webpack-plugin": "^3.0.0-beta.2",
+    "pug": "^2.0.3",
+    "pug-html-loader": "^1.1.5",
+    "pug-plain-loader": "^1.0.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.22.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "ts-jest": "^23.10.4",
+    "ts-loader": "^4.5.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.2",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.1.4",
+    "write-file-webpack-plugin": "^4.4.1"
+  },
+  "dependencies": {
+    "@mantha/core": "^1.0.0",
+    "@mantha/ts-config": "^1.0.2"
+  },
+  "babel": {
+    "plugins": [
+      "syntax-dynamic-import",
+      "import-static-files"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "@/(.*)": "<rootDir>/src/$1"
+    },
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    },
+    "collectCoverage": true
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

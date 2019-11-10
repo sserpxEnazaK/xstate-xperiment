@@ -1,0 +1,6 @@
+{
+  "extends": "@mantha/ts-config",
+  "compilerOptions": {
+    "baseUrl": "./"
+  }
+}
